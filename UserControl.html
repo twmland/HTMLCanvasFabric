@@ -13,13 +13,31 @@
    <title>
      以 fabric.js 套件在畫布上新增控制頁 
    </title>
+   <script>
+        var canvas=null;
+		
+		function getCanvasObject(){
+		     var objects=canvas.getObjects(); // 取得畫布上所有物件		
+			 var json=JSON.stringify(objects);
+			 console.log("objects:" + objects);
+			 console.log("objects Json:" +json);
+			 console.log('.............................');
+			 
+			 
+		}
+   </script>
+   
 </head>
 <body>
 <div class='mt-3 ml-3'>
   <canvas id='canvas' class='border rounded'  >
 
   </canvas>
- 
+   
+   <frameset>
+   <input type='button' value='取得畫布上物件' onclick='getCanvasObject()'/>
+   </frameset>
+   
 </div> 
 
 
@@ -31,12 +49,14 @@ var canvas=new fabric.Canvas('canvas', {
   width:  window.innerWidth-60, // 讓畫布同視窗大小
   //height:  600, 
   //width:  700, 
-  isDrawingMode: false, // 設置成 true 一秒變身小畫家
+  isDrawingMode: true, // 設置成 true 一秒變身小畫家
   hoverCursor: 'progress', // 移動時鼠標顯示
   freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
   backgroundColor: 'lightgray', // 背景色,
   //backgroundImage: 'https://www.pakutaso.com/shared/img/thumb/neko1869IMG_9074_TP_V.jpg' // 背景圖片
 });
+
+
 
 // add a Rect(四邉形)
 </script>
