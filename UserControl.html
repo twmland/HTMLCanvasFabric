@@ -16,27 +16,29 @@
    <script>
         var canvas=null;
 		
+		// 取畫布上所有物件
 		function getCanvasObject(){
 		     var objects=canvas.getObjects(); // 取得畫布上所有物件		
 			 var json=JSON.stringify(objects);
 			 console.log("objects:" + objects);
 			 console.log("objects Json:" +json);
 			 console.log('.............................');
-			 
-			 
 		}
    </script>
    
 </head>
 <body>
-<div class='mt-3 ml-3'>
-  <canvas id='canvas' class='border rounded'  >
+<div class='mt-3 ml-3' style='width:100%'>
+   <fieldset class='border rounded mr-5'>
+       <legend>Buttons</legend>
+       <a href="#" class='btn btn-info' onclick='getCanvasObject()'>取得畫布上所有物件</a>&nbsp;
+	  
+   </fieldset>
+  <canvas id='canvas' class='border rounded mt-1' style='width:100%' >
 
   </canvas>
    
-   <frameset>
-   <input type='button' value='取得畫布上物件' onclick='getCanvasObject()'/>
-   </frameset>
+  
    
 </div> 
 
@@ -45,11 +47,11 @@
 <script>
 // 新增一個畫布, 並設定畫布
 var canvas=new fabric.Canvas('canvas', {
-  height:  window.innerHeight-60, // 讓畫布同視窗大小
+  height:  window.innerHeight-100, // 讓畫布同視窗大小
   width:  window.innerWidth-60, // 讓畫布同視窗大小
   //height:  600, 
   //width:  700, 
-  isDrawingMode: true, // 設置成 true 一秒變身小畫家
+  isDrawingMode: false, // 設置成 true 一秒變身小畫家
   hoverCursor: 'progress', // 移動時鼠標顯示
   freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
   backgroundColor: 'lightgray', // 背景色,
