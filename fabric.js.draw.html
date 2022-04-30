@@ -80,7 +80,7 @@ var draw=null;
        this.canvas=null;
        
        /**
-        * @method getCanvas 取得一個Canvas
+        * @method getCanvas 取得 畫布實體
         * @returns {HTMLElement}
         */
        this.getCanvas=function(){
@@ -90,12 +90,18 @@ var draw=null;
           return this.canvas;
        };
 			
+       /**
+        * @method setCanvasSize 設定畫布尺寸
+        */ 
        this.setCanvasSize=function(width,height){
            var canvas=this.getCanvas();
            canvas.setHeight(height);
            canvas.setWidth(width);
        };
 
+       /**
+        * @function setCanvasBackGroundColor 設定畫布背景色
+        */ 
        this.setCanvasBackGroundColor=function(color){
            var canvas=this.getCanvas();
            canvas.setBackgroundColor(color);
